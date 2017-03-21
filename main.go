@@ -1,8 +1,8 @@
 package main
 
 import (
-	"cert-exp-check/check"
-	"cert-exp-check/config"
+	"cert-check/check"
+	"cert-check/config"
 )
 
 func init() {

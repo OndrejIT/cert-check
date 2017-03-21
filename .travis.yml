@@ -1,0 +1,7 @@
+language: go
+
+script:
+  - go get ./...
+  - go test ./...
+  - go build
+  - ./cert-check -h google.com -e 1

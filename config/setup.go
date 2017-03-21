@@ -17,11 +17,6 @@ func Setup() {
 	conf.SetConfigName("config")
 	conf.AddConfigPath(conf.GetString("config"))
 
-	conf.SetEnvPrefix("")
-	conf.AutomaticEnv()
-
-	if err := conf.ReadInConfig(); err != nil {
-		log.Fatal(err)
-	}
+	conf.ReadInConfig()
 
 }
