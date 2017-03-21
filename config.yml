@@ -1,0 +1,8 @@
+hosts:
+  - ondrej.it
+  - google.com
+  - github.com
+
+notofy:
+  expires: 1000
+  email: ondrej@ondrej.it
