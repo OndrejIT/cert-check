@@ -1,6 +1,7 @@
 package check
 
 import (
+	"fmt"
 	log "github.com/Sirupsen/logrus"
 	conf "github.com/spf13/viper"
 )
@@ -13,8 +14,13 @@ func Check() {
 	}
 
 	for host := range hosts {
-		if err := expCheck(hosts[host]); err != nil {
-			log.Warn(err)
+		exp_msq := expCheck(hosts[host])
+		if len(exp_msq) != 0 {
+			log.Warn(fmt.Sprintf("------ %s ------", hosts[host]))
+		}
+
+		for msq := range exp_msq {
+			log.Warn(exp_msq[msq])
 		}
 	}
 }

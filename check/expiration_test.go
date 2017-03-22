@@ -16,7 +16,8 @@ func init() {
 }
 
 func TestExpCheck(t *testing.T) {
-	if check := expCheck("github.com"); check != nil {
-		t.Error("Expiration check error.", check)
+	exp_msq := expCheck("github.com")
+	if len(exp_msq) != 0 {
+		t.Error("Expiration check error.", exp_msq)
 	}
 }
