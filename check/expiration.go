@@ -10,8 +10,8 @@ import (
 )
 
 func expCheck(host string) error {
-	expires := conf.GetInt("notofy.expires")
-	conn, err := tls.Dial("tcp", host + ":443", nil)
+	expires := conf.GetInt("expires")
+	conn, err := tls.Dial("tcp", host+":443", nil)
 	if err != nil {
 		return err
 	}

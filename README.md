@@ -1,6 +1,9 @@
-Certificate expiration check.
+# Certificate expiration check [![Build Status](https://travis-ci.org/OndrejIT/cert-check.svg?branch=master)](https://travis-ci.org/OndrejIT/cert-check)
 
-Run
+### Test
+  - go test ./...
+
+### Run
  - go get ./...
- - go run ./main.go (-h help, -d debug, -c configPath)
+ - go run ./main.go (-h help, -d debug, -v verbose, -e expiration alert (day), -a check address (multiple), -c configPath)
  

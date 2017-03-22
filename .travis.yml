@@ -1,7 +1,20 @@
 language: go
+sudo: false
+go_import_path: cert-check
+
+go:
+  - 1.6.x
+  - 1.7.x
+  - master
+
+install:
+  - go get ./...
+  - go build
+
+before_script:
+  - go vet ./...
 
 script:
-  - go get ./...
   - go test ./...
-  - go build
-  - ./cert-check -h google.com -e 1
+  - ./cert-check -d -v -e 1
+  - ./cert-check -d -e 10000

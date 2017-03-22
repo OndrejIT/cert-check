@@ -1,14 +1,13 @@
 package check
 
 import (
-	"testing"
 	"bytes"
 	conf "github.com/spf13/viper"
+	"testing"
 )
 
 var yamlConf = []byte(`
-notofy:
-  expires: 10000
+expires: 0
 `)
 
 func init() {
@@ -17,7 +16,7 @@ func init() {
 }
 
 func TestExpCheck(t *testing.T) {
-	if check := expCheck("github.com"); check == nil {
+	if check := expCheck("github.com"); check != nil {
 		t.Error("Expiration check error.", check)
 	}
 }
