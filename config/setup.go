@@ -10,11 +10,15 @@ func Setup() {
 
 	if conf.GetBool("debug") {
 		log.SetLevel(log.DebugLevel)
+		text_formatter := new(log.TextFormatter)
+		text_formatter.TimestampFormat = "2006-01-02 15:04:05"
+		log.SetFormatter(text_formatter)
+		text_formatter.FullTimestamp = true
 	} else {
 		log.SetFormatter(&log.JSONFormatter{})
 	}
 
-	conf.SetConfigName("config")
+	conf.SetConfigName("cert-check")
 	conf.AddConfigPath(conf.GetString("config"))
 
 	conf.ReadInConfig()

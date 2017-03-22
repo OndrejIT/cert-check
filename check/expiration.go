@@ -22,14 +22,14 @@ func expCheck(host string) error {
 		expire := int(certs[0].NotAfter.Sub(time_now).Hours() / 24)
 		if conf.GetBool("verbose") {
 			log.Info(fmt.Sprintf("Host: %s, Expires: %d days, Expires on: %s",
-				certs[0].Subject.CommonName,
+				host,
 				expire,
 				certs[0].NotAfter),
 			)
 		}
 		if expire < expires {
 			return errors.New(fmt.Sprintf("Host: %s, Expires: %d days, Expires on: %s",
-				certs[0].Subject.CommonName,
+				host,
 				expire,
 				certs[0].NotAfter),
 			)
