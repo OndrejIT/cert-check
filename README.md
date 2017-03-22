@@ -5,5 +5,5 @@
 
 ### Run
  - go get ./...
- - go run ./main.go (-h help, -d debug, -v verbose, -e expiration alert (day), -a check address (multiple), -c configPath)
+ - go run ./main.go (-h help, -d debug, -v verbose, -e expiration alert (day), -a check address (multiple), -c config path)
  
